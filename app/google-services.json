@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "178101588031",
+    "project_id": "funjourney-7b121",
+    "storage_bucket": "funjourney-7b121.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178101588031:android:1e0cc26d7d6e5c0049a88a",
+        "android_client_info": {
+          "package_name": "com.zenicore.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyeRcrOhapUMW8VXhn37YPtG9cAiDSUDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

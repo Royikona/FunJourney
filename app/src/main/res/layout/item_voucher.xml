@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+    <ImageView
+        android:id="@+id/voucherIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_gift"
+    android:layout_gravity="center_horizontal"
+    android:contentDescription="Voucher Icon"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/voucherType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voucher Cashback"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+        <TextView
+            android:id="@+id/voucherAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 60.000"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnClaim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Klaim" />
+</LinearLayout>
