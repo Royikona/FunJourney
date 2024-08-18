@@ -19,7 +19,6 @@ class InviteActivity : AppCompatActivity() {
             shareContent()
         }
     }
-
     private fun shareContent() {
         val shareMessage = "Check out this app GameBank with my referral code: REF1234"
         val shareIntent = Intent(Intent.ACTION_SEND).apply {

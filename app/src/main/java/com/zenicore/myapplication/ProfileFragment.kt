@@ -37,12 +37,10 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
-
         if (user != null) {
             if (user.photoUrl != null) {
                 Picasso.get().load(user.photoUrl).into(binding.ivProfile)
@@ -51,27 +49,21 @@ class ProfileFragment : Fragment() {
             }
             binding.etName.setText(user.displayName)
             binding.etEmail.setText(user.email)
-
             val userId = user.uid
             val db = FirebaseDatabase.getInstance()
             val userRef = db.getReference("users").child(userId)
-
             userRef.child("bio").get().addOnSuccessListener { snapshot ->
                 val bio = snapshot.getValue(String::class.java)
                 binding.etBio.setText(bio)
             }
-
             userRef.child("highscore").get().addOnSuccessListener { snapshot ->
-
                 val highScore = snapshot.getValue(Int::class.java) ?: 0
                 binding.tvScore.text = "Score: $highScore"
             }
         }
-
         binding.ivProfile.setOnClickListener {
             intentGallery()
         }
-
         binding.btnUpdate.setOnClickListener {
             val image = imageUri ?: user?.photoUrl ?: Uri.parse("https://picsum.photos/200")
             val name = binding.etName.text.toString().trim()

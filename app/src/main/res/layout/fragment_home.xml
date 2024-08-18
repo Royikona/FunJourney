@@ -7,13 +7,22 @@
     tools:context=".MainActivity">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include layout="@layout/partial_main_activity" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/partial_main_activity" />
+
+            <include layout="@layout/partial_score" />
+
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
 
 

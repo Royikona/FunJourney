@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class GameActivity : AppCompatActivity() {
-
     private lateinit var webView: WebView
     private lateinit var tvScore: TextView
     private lateinit var tvHighScore: TextView
@@ -22,23 +21,18 @@ class GameActivity : AppCompatActivity() {
     private var highScore: Int =-1
     private lateinit var handler: Handler
     private lateinit var scoreRunnable: Runnable
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-
         webView = findViewById(R.id.webView1)
         tvScore = findViewById(R.id.tvScore)
         tvHighScore = findViewById(R.id.tvHighScore)
-
         setupWebView()
         fetchHighScore()
-
         val backButton: Button = findViewById(R.id.btn_back)
         backButton.setOnClickListener {
             onBackPressed()
         }
-
         handler = Handler(Looper.getMainLooper())
         scoreRunnable = object : Runnable {
             override fun run() {
@@ -49,7 +43,7 @@ class GameActivity : AppCompatActivity() {
                     tvHighScore.text = "High Score: $highScore"
                     saveHighScoreToFirebase(highScore)
                 }
-                handler.postDelayed(this, 20000) // 20 seconds
+                handler.postDelayed(this, 2000) // 20 seconds
             }
         }
     }
